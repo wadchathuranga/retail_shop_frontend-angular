@@ -22,16 +22,16 @@ export class MasterService {
     return this.http.get(`${this.backendUrl}/invoice`);
   }
 
-  // GetInvHeaderbycode(invoiceno: any) {
-  //   return this.http.get(
-  //     `http://localhost:5103/Invoice/GetAllHeaderbyCode?invoiceno=` + invoiceno
-  //   );
-  // }
-  // GetInvDetailbycode(invoiceno: any) {
-  //   return this.http.get(
-  //     `http://localhost:5103/Invoice/GetAllDetailbyCode?invoiceno=` + invoiceno
-  //   );
-  // }
+  GetInvHeaderbycode(invoiceno: any) {
+    return this.http.get(
+      `http://localhost:5103/Invoice/GetAllHeaderbyCode?invoiceno=` + invoiceno
+    );
+  }
+  GetInvDetailbycode(invoiceno: any) {
+    return this.http.get(
+      `http://localhost:5103/Invoice/GetAllDetailbyCode?invoiceno=` + invoiceno
+    );
+  }
   RemoveInvoice(invoiceno: any) {
     return this.http.delete(`${this.backendUrl}/invoice?id=${invoiceno}`);
   }
