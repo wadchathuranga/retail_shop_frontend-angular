@@ -1,0 +1,62 @@
+<div class="card" style="width: 1200px">
+    <div class="card-header">
+        <div class="row text-center">
+            <div class="col">
+                <h3>Invoice List</h3>
+            </div>
+
+            <div class="col">
+                <a class="btn btn-primary" routerLink="createinvoice">Create a New Invoice</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+
+        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <td>Invoice No</td>
+                    <td>Customer Name</td>
+                    <td>Contact Number</td>
+                    <td>Total Amount</td>
+                    <td>Discount</td>
+                    <td>Net Total</td>
+                    <td class="text-center">Action</td>
+                </tr>
+            </thead>
+            <tbody>
+<tr *ngFor="let item of Invoiceheader">
+    <td>{{item.id}}</td>
+    <td>{{item.transaction.customerName}}</td>
+    <td>{{item.transaction.contactNumber}}</td>
+    <td>{{item.totalAmount | currency}}</td>
+    <td>{{item.transaction.totalDiscount | currency}}</td>
+    <td>{{item.balanceAmount | currency}}</td>
+    <td style="width: 25%" class="text-center">
+        <a class="btn btn-warning text-white" (click)="PreviewInvoice(item.id)">Print</a>
+        <a class="btn btn-primary mx-1" (click)="DownloadInvoice(item.id)">Download</a>
+        <a class="btn btn-danger" (click)="invoiceremove(item.id)">Delete</a>
+    </td>
+
+</tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Preview Invoice : <b>{{invoiceno}}</b></h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<ngx-extended-pdf-viewer [src]="pdfurl"></ngx-extended-pdf-viewer>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-danger" (click)="d('Cross click')">Close</button>
+	</div>
+</ng-template>
+
