@@ -1,12 +1,22 @@
-# todo-frontend
-Angular frontend service for retail shop application
+# Retail Shop Frontend Service
+##### Angular frontend service for retail shop application
 
 
-# project setup
-`git clone https://github.com/ireshamadhu1995/retail-frontend.git`
-
-`npm install`
-
-`ng serve`
-
-open `http://localhost:4200` from the browser
+# How to Setup the Project
+### 1. Clone the repository. 
+```
+https://github.com/wadchathuranga/retail_shop_frontend-angular
+```
+### 2. Open project in VSCode.
+### 3. Install dependencies. 
+```
+npm install
+```
+### 4. Run the server. 
+```
+npm start
+```
+### 5. Open a new tab in the web browser and browse the following URL
+```
+http://localhost:4200
+```
