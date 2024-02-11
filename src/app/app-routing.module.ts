@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CreateinvoiceComponent } from './createinvoice/createinvoice.component';
-import { ListingComponent } from './listing/listing.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { CreateinvoiceComponent } from "./pages/createinvoice/createinvoice.component";
+import { ListingComponent } from "./pages/listing/listing.component";
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'createinvoice', pathMatch: 'full' },
-  {component:ListingComponent,path:""},
-  {component:CreateinvoiceComponent,path:"createinvoice"},
-  {component:CreateinvoiceComponent,path:"editinvoice/:invoiceno"}]; 
+  { component: ListingComponent, path: "" },
+  { component: CreateinvoiceComponent, path: "createinvoice" },
+  { component: CreateinvoiceComponent, path: "editinvoice/:invoiceno" },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

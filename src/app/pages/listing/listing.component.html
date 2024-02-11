@@ -33,7 +33,7 @@
     <td>{{item.transaction.totalDiscount | currency}}</td>
     <td>{{item.balanceAmount | currency}}</td>
     <td style="width: 25%" class="text-center">
-        <a class="btn btn-warning text-white" (click)="PreviewInvoice(item.id)">Print</a>
+        <a class="btn btn-warning" (click)="PreviewInvoice(item.id)">Print</a>
         <a class="btn btn-primary mx-1" (click)="DownloadInvoice(item.id)">Download</a>
         <a class="btn btn-danger" (click)="invoiceremove(item.id)">Delete</a>
     </td>
